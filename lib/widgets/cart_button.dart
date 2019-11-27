@@ -23,7 +23,7 @@ class CartButton extends StatelessWidget {
     return FloatingActionButton(
       child:
       Badge(
-        badgeContent: Text("3"),
+        badgeContent: Text("${qtd}"),
         child: Icon(Icons.shopping_cart),
       ),
       onPressed: () {
