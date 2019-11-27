@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "724844680199",
+    "firebase_url": "https://mr-ze-market.firebaseio.com",
+    "project_id": "mr-ze-market",
+    "storage_bucket": "mr-ze-market.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:724844680199:android:86aef754cc6cec062e06a2",
+        "android_client_info": {
+          "package_name": "br.com.mrzemarket.mr_ze_market"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "724844680199-05t35l3sbvgetlmqrm6q7lkuj557eivi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOPBXNbjcTv0MtK2F4VpyTgIgcyFdexWQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "724844680199-05t35l3sbvgetlmqrm6q7lkuj557eivi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
