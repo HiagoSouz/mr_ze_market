@@ -61,7 +61,7 @@ class ShipCard extends StatelessWidget {
                 else{
                   CartModel.of(context).setNumero(text);
                 }
-              },
+              },   
             ),
           ),
           Padding(
