@@ -70,6 +70,10 @@ class CartModel extends Model {
     notifyListeners();
   }
 
+  int getQtdCart(){
+    return products.length;
+  }
+
   double getProductsPrice(){
     double price = 0.0;
     for(CartProduct c in products){

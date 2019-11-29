@@ -3,10 +3,11 @@ import 'package:mr_ze_market/model/cart_model.dart';
 import 'package:mr_ze_market/screens/cart_file.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'package:badges/badges.dart';
+import 'package:mr_ze_market/model/cart_model.dart';
 
 
 class CartButton extends StatelessWidget {
-  int totalProducts;
+
   @override
   Widget build(BuildContext context) {
 
@@ -16,18 +17,14 @@ class CartButton extends StatelessWidget {
             builder: (context, child, model){
               int qtd = model.products.length;
               //setState(()
-              {
-                totalProducts = qtd;
-              });
-            }
-        ),
-      ),
-    );
-    */
-
+             } )
+            ));
+  */
+    int qtd = getQtdCart();
     return FloatingActionButton(
+
       child: Badge(
-        badgeContent: Text("${totalProducts}"),
+        badgeContent: Text("3"),
         child: Icon(Icons.shopping_cart),
       ),
       onPressed: () {

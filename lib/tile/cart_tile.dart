@@ -39,7 +39,7 @@ class CartTile extends StatelessWidget {
                     style: TextStyle(fontWeight: FontWeight.w500, fontSize: 17.0),
                   ),
                   Text(
-                    "Tamanho: ${cartProduct.size}",
+                    "Variação: ${cartProduct.size}",
                     style: TextStyle(fontWeight: FontWeight.w300),
                   ),
                   Text(
