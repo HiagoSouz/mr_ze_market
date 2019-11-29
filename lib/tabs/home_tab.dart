@@ -31,6 +31,7 @@ class HomeTab extends StatelessWidget {
               backgroundColor: Colors.transparent,
               elevation: 0.0,
               flexibleSpace: FlexibleSpaceBar(
+
                 title: const Text("Mercado do Seu Zé"),
                 centerTitle: true,
               ),

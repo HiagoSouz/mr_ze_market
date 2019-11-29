@@ -38,9 +38,12 @@ class _ProductScreenState extends State<ProductScreen> {
       ),
       body: ListView(
         children: <Widget>[
-          AspectRatio(
-              aspectRatio: 1.67,
-              child: Image.network(product.images)
+          SizedBox(
+            height: 350.0,
+            child: Image.network(
+              (product.images),
+              fit: BoxFit.fill,
+            ),
           ),
           Padding(
             padding: EdgeInsets.all(16.0),

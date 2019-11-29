@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mr_ze_market/tabs/orders_tab.dart';
 
 class OrderScreen extends StatelessWidget {
 
@@ -27,10 +28,33 @@ class OrderScreen extends StatelessWidget {
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0),
             ),
             Text("Código do pedido: $orderId", style: TextStyle(fontSize: 16.0),
-            )
+            ),
+            SizedBox(height: 20,),
+            RaisedButton(
+              onPressed: () {
+                Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(builder: (context) =>
+                        Scaffold(
+                          appBar: AppBar(
+                            title: Text("Meus Pedidos"),
+                            centerTitle: true,
+                          ),
+
+                          body: OrdersTab(),
+                        )));
+              },
+              child: Text(
+                "Visualizar Pedidos", style: TextStyle(fontSize: 18.0),),
+              textColor: Colors.white,
+              color: Theme
+                  .of(context)
+                  .primaryColor,
+            ),
           ],
         ),
       ),
     );
   }
+
 }
+

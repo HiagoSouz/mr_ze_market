@@ -67,10 +67,18 @@ class CartScreen extends StatelessWidget {
                 ),
               );
             } else if (model.products == null || model.products.length == 0){
-              return Center(
-                child: Text("Nenhum produto no carrinho!",
-                  style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
-                  textAlign: TextAlign.center,),
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text("Nenhum Produto No Carrinho!",
+                    style: TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold),
+                    textAlign: TextAlign.center,),
+                  Icon(Icons.sentiment_dissatisfied,
+                    color: Theme.of(context).primaryColor,
+                    size: 80.0,
+                  ),
+                ],
               );
             } else {
               return ListView(

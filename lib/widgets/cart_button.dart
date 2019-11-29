@@ -6,24 +6,28 @@ import 'package:badges/badges.dart';
 
 
 class CartButton extends StatelessWidget {
+  int totalProducts;
   @override
   Widget build(BuildContext context) {
 
-    Scaffold(
+    /*Scaffold(
       body: Center(
         child: ScopedModelDescendant<CartModel>(
             builder: (context, child, model){
               int qtd = model.products.length;
+              //setState(()
+              {
+                totalProducts = qtd;
+              });
             }
         ),
       ),
     );
-
+    */
 
     return FloatingActionButton(
-      child:
-      Badge(
-        badgeContent: Text("${qtd}"),
+      child: Badge(
+        badgeContent: Text("${totalProducts}"),
         child: Icon(Icons.shopping_cart),
       ),
       onPressed: () {
@@ -37,3 +41,4 @@ class CartButton extends StatelessWidget {
     );
   }
 }
+

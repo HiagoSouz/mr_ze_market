@@ -8,12 +8,12 @@ import 'package:flutter/material.dart';
 class CartModel extends Model {
 
   UserModel user;
-
   List<CartProduct> products = [];
-
   String couponCode;
   int discountPercentage = 0;
-
+  String endereco;
+  String numero;
+  String complemento;
   bool isLoading = false;
 
   CartModel(this.user){
@@ -47,7 +47,6 @@ class CartModel extends Model {
 
   void decProduct(CartProduct cartProduct){
     cartProduct.quantity--;
-
     Firestore.instance.collection("users").document(user.firebaseUser.uid).collection("cart")
         .document(cartProduct.cid).updateData(cartProduct.toMap());
 
@@ -56,7 +55,6 @@ class CartModel extends Model {
 
   void incProduct(CartProduct cartProduct){
     cartProduct.quantity++;
-
     Firestore.instance.collection("users").document(user.firebaseUser.uid).collection("cart")
         .document(cartProduct.cid).updateData(cartProduct.toMap());
 
@@ -77,7 +75,6 @@ class CartModel extends Model {
     for(CartProduct c in products){
       if(c.cardapioData != null)
         price += c.quantity * c.cardapioData.price;
-
     }
     return price;
   }
@@ -87,15 +84,35 @@ class CartModel extends Model {
   }
 
   double getShipPrice(){
-    return 3.00;
+    return 3.99;
   }
+
+void setEndereco(String endereco){
+    this.endereco = endereco;
+}
+  void setNumero(String numero){
+    this.numero = numero;
+  }
+  void setComplemento(String complemento){
+    this.complemento = complemento;
+  }
+
+  String getEndereco(){
+   return endereco;}
+
+  String getNumero (){
+    return numero;}
+  String getComplemento(){
+    return complemento;}
 
   Future<String> finishOrder() async {
     if(products.length == 0) return null;
 
     isLoading = true;
     notifyListeners();
-
+    String endereco = getEndereco();
+    String numero = getNumero();
+    String complemento = getComplemento();
     double productsPrice = getProductsPrice();
     double shipPrice = getShipPrice();
     double discount = getDiscount();
@@ -108,7 +125,11 @@ class CartModel extends Model {
           "productsPrice": productsPrice,
           "discount": discount,
           "totalPrice": productsPrice - discount + shipPrice,
-          "status": 1
+          "status": 1,
+          "endereco": endereco,
+          "numero": numero,
+          "complemento": complemento
+
         }
     );
 

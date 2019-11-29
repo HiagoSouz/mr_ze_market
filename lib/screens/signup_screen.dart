@@ -65,20 +65,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                     obscureText: true,
                     validator: (text){
-                      if(text.isEmpty || text.length < 6) return "Senha inválida!";
+                      if(text.isEmpty || text.length < 6) return "Senha inválida!\nSua Senha deve ter mais de 6 Caracteres!";
                     },
                   ),
-                  SizedBox(height: 16.0,),
-                  TextFormField(
-                    controller: _addressController,
-                    decoration: InputDecoration(
-                        hintText: "Endereço"
-                    ),
-                    validator: (text){
-                      if(text.isEmpty) return "Endereço inválido!";
-                    },
-                  ),
-                  SizedBox(height: 16.0,),
+                  SizedBox(height: 32.0,),
                   SizedBox(
                     height: 44.0,
                     child: RaisedButton(
