@@ -68,7 +68,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     obscureText: true,
                     validator: (text){
-                      if(text.isEmpty || text.length < 6) return "Senha inválida!";
+                      if(text.isEmpty || text.length < 6) return "Senha inválida!\nSua Senha deve ter mais de 6 dígitos";
                     },
                   ),
                   Align(
@@ -85,7 +85,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         else {
                           model.recoverPass(_emailController.text);
                           _scaffoldKey.currentState.showSnackBar(
-                              SnackBar(content: Text("Confira seu e-mail!"),
+                              SnackBar(content: Text("Enviamos Um E-mail Para Sua Caixa De Entrada\nConfira seu e-mail!"),
                                 backgroundColor: Theme
                                     .of(context)
                                     .primaryColor,

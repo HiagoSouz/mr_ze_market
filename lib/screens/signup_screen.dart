@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_masked_text/flutter_masked_text.dart';
 import 'package:mr_ze_market/model/user_model.dart';
 import 'package:scoped_model/scoped_model.dart';
 
@@ -14,7 +15,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final _nameController = TextEditingController();
   final _emailController = TextEditingController();
   final _passController = TextEditingController();
-  final _addressController = TextEditingController();
+  final _telefoneController = MaskedTextController(mask: '(00)00000-0000');
 
   final _formKey = GlobalKey<FormState>();
   final _scaffoldKey = GlobalKey<ScaffoldState>();
@@ -40,17 +41,17 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   TextFormField(
                     controller: _nameController,
                     decoration: InputDecoration(
-                        hintText: "Nome Completo"
+                        hintText: "Nome Completo *"
                     ),
                     validator: (text){
-                      if(text.isEmpty) return "Nome Inválido!";
+                      if(text.isEmpty) return "Insira Um Nome!";
                     },
                   ),
                   SizedBox(height: 16.0,),
                   TextFormField(
                     controller: _emailController,
                     decoration: InputDecoration(
-                        hintText: "E-mail"
+                        hintText: "E-mail *"
                     ),
                     keyboardType: TextInputType.emailAddress,
                     validator: (text){
@@ -61,11 +62,23 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   TextFormField(
                     controller: _passController,
                     decoration: InputDecoration(
-                        hintText: "Senha"
+                        hintText: "Senha *"
                     ),
                     obscureText: true,
                     validator: (text){
                       if(text.isEmpty || text.length < 6) return "Senha inválida!\nSua Senha deve ter mais de 6 Caracteres!";
+                    },
+                  ),
+                  SizedBox(height: 16.0),
+                  TextFormField(
+                    controller: _telefoneController,
+                    keyboardType: TextInputType.number,
+                    decoration: InputDecoration(
+                        hintText: "Telefone: *"
+                    ),
+                    validator: (text){
+                      if(text.isEmpty){
+                        return "Telefone Inválido";} return null;
                     },
                   ),
                   SizedBox(height: 32.0,),
@@ -85,7 +98,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           Map<String, dynamic> userData = {
                             "name": _nameController.text,
                             "email": _emailController.text,
-                            "address": _addressController.text
+                            "telefone": _telefoneController.text
                           };
 
                           model.signUp(

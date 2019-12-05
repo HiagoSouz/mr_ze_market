@@ -131,9 +131,8 @@ class _ProductScreenState extends State<ProductScreen> {
 
                         CartModel.of(context).addCartItem(cartProduct);
 
-                        Navigator.of(context).push(
-                            MaterialPageRoute(builder: (context)=>CartScreen())
-                        );
+                        Navigator.of(context).pop();
+                        Navigator.of(context).pop();
 
                       } else {
                         Navigator.of(context).push(

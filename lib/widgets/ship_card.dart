@@ -2,13 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:mr_ze_market/model/cart_model.dart';
 
 
-class ShipCard extends StatelessWidget {
-  final _enderecoController = TextEditingController();
-  final _numeroController = TextEditingController();
-  final _complementoController = TextEditingController();
-  final _scaffoldKey = GlobalKey<ScaffoldState>();
+class ShipCard extends StatefulWidget {
+  @override
+  _ShipCardState createState() => _ShipCardState();
+}
 
-  final _formKey = GlobalKey<FormState>();
+class _ShipCardState extends State<ShipCard> {
 
   @override
   Widget build(BuildContext context) {
@@ -28,18 +27,17 @@ class ShipCard extends StatelessWidget {
           Padding(
             padding: EdgeInsets.all(8.0),
             child: TextFormField(
-              controller: _enderecoController,
               decoration: InputDecoration(
                   border: OutlineInputBorder(),
                   hintText: "Rua"
               ),
-              onFieldSubmitted: (text){
-                if(text.isEmpty) {
-                  Scaffold.of(context).showSnackBar(
-                      SnackBar(content: Text("Por Favor, Digite Sua Rua",),
-                        backgroundColor: Colors.red,));
+              onChanged: (text){
+                if(text.isEmpty)
+                {
+                   return "Por Favor, Digite Sua Rua";
                 }
-                else{
+                else
+                {
                   CartModel.of(context).setEndereco(text);
                 }
               },
@@ -48,32 +46,29 @@ class ShipCard extends StatelessWidget {
           Padding(
             padding: EdgeInsets.all(8.0),
             child: TextFormField(
-              controller: _numeroController,
               decoration: InputDecoration(
                   border: OutlineInputBorder(),
                   hintText: "Numero"
               ),
-              onFieldSubmitted: (text){
-
-                if(text.isEmpty){
-                  Scaffold.of(context).showSnackBar(SnackBar(content: Text("Por Favor, Digite Seu Numero",),
-                    backgroundColor: Colors.red,));}
-                else{
-                  CartModel.of(context).setNumero(text);
-                }
-              },   
+                      onChanged: (text){
+                       if(text.isEmpty)
+                   {
+                           return "Por Favor, Digite Sua Rua";
+                    }
+                          else
+                   {
+                      CartModel.of(context).setNumero(text);
+                   }}
             ),
           ),
           Padding(
             padding: EdgeInsets.all(8.0),
             child: TextFormField(
-              controller: _complementoController,
               decoration: InputDecoration(
                   border: OutlineInputBorder(),
                   hintText: "Complemento"
               ),
-              onFieldSubmitted: (text){
-
+              onChanged: (text){
                 CartModel.of(context).setComplemento(text);
               },
 

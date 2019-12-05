@@ -5,11 +5,12 @@ import 'package:mr_ze_market/screens/order_screen.dart';
 import 'package:mr_ze_market/tile/cart_tile.dart';
 import 'package:mr_ze_market/widgets/cart_price.dart';
 import 'package:mr_ze_market/widgets/discount_card.dart';
+import 'package:mr_ze_market/widgets/pay_card.dart';
 import 'package:mr_ze_market/widgets/ship_card.dart';
 import 'package:scoped_model/scoped_model.dart';
 
 import 'login_screen.dart';
-
+int qtd;
 class CartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -34,6 +35,7 @@ class CartScreen extends StatelessWidget {
       ),
       body: ScopedModelDescendant<CartModel>(
           builder: (context, child, model){
+            qtd = model.products.length;
             if(model.isLoading && UserModel.of(context).isLoggedIn()){
               return Center(
                 child: CircularProgressIndicator(),
@@ -92,13 +94,15 @@ class CartScreen extends StatelessWidget {
                   ),
                   DiscountCard(),
                   ShipCard(),
+                  PayCard(),
                   CartPrice(() async {
                     String orderId = await model.finishOrder();
-                    if(orderId != null)
+                      if(orderId != null)
                       Navigator.of(context).pushReplacement(
                           MaterialPageRoute(builder: (context)=>OrderScreen(orderId))
                       );
-                  }),
+                  }
+                    ),
                 ],
               );
             }

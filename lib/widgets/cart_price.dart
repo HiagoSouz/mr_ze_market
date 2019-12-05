@@ -6,6 +6,7 @@ class CartPrice extends StatelessWidget {
 
   final VoidCallback buy;
 
+
   CartPrice(this.buy);
 
   @override
@@ -65,11 +66,82 @@ class CartPrice extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 12.0,),
+
+
                 RaisedButton(
                   child: Text("Finalizar Pedido"),
                   textColor: Colors.white,
                   color: Theme.of(context).primaryColor,
-                  onPressed: buy,
+                  onPressed: () {
+                        showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return AlertDialog(
+                            title: Text("Confira Suas Informações:"),
+                            content: SizedBox(
+                              height: 280,
+                            child: Card(
+                              child: Column(
+                                children: [
+                                  ListTile(
+                                    title: Text(model.endereco!=null ? "Rua: ${model.endereco}" : "Rua Não Selecionada",
+                                        style: TextStyle(fontWeight: FontWeight.w500)),
+                                    leading: Icon(
+                                      Icons.home,
+                                      color: Theme
+                                          .of(context)
+                                          .primaryColor,
+                                    ),
+                                  ),
+                                  Divider(),
+                                  ListTile(
+                                    title: Text(model.numero!=null ? "Número: ${model.numero}" : "Sem Número",
+                                        style: TextStyle(fontWeight: FontWeight.w500)),
+                                    leading: Icon(
+                                      Icons.filter_1,
+                                      color: Theme
+                                          .of(context)
+                                          .primaryColor,
+                                    ),
+                                  ),
+                                  Divider(),
+                                  ListTile(
+                                    title: Text(model.complemento!=null ? "Complemento: ${model.complemento}" : "Sem Complemento",
+                                        style: TextStyle(fontWeight: FontWeight.w500)),
+                                    leading: Icon(
+                                      Icons.spellcheck,
+                                      color: Theme
+                                          .of(context)
+                                          .primaryColor,
+                                    ),
+                                  ),
+                                  Divider(),
+                                  ListTile(
+                                    title: Text(model.paymethod!=null ? "Pagamento Em Dinheiro" : "Pagamento No Cartão",
+                                        style: TextStyle(fontWeight: FontWeight.w500)),
+                                    leading: Icon(
+                                      Icons.attach_money,
+                                      color: Theme
+                                          .of(context)
+                                          .primaryColor,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            ),
+                            actions: <Widget>[
+                              FlatButton(child: Text("Voltar",style: TextStyle(fontWeight: FontWeight.w500,fontSize: 15)),
+                                onPressed: (){
+                                  Navigator.of(context).pop();
+                                },),
+                              FlatButton(child: Text("Tudo Certo",style: TextStyle(fontWeight: FontWeight.w500,fontSize: 15)),
+                                onPressed: buy
+                              )
+                            ],
+                          );
+                        });
+                  }
                 )
               ],
             );

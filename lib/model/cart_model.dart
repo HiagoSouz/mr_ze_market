@@ -5,6 +5,7 @@ import 'package:mr_ze_market/model/user_model.dart';
 import 'package:scoped_model/scoped_model.dart';
 import 'package:flutter/material.dart';
 
+
 class CartModel extends Model {
 
   UserModel user;
@@ -15,6 +16,7 @@ class CartModel extends Model {
   String numero;
   String complemento;
   bool isLoading = false;
+  String paymethod;
 
   CartModel(this.user){
     if(user.isLoggedIn())
@@ -91,6 +93,10 @@ class CartModel extends Model {
     return 3.99;
   }
 
+  String getPayMethod(){
+    return paymethod;
+  }
+
 void setEndereco(String endereco){
     this.endereco = endereco;
 }
@@ -99,6 +105,10 @@ void setEndereco(String endereco){
   }
   void setComplemento(String complemento){
     this.complemento = complemento;
+  }
+
+  void setPayMethod(String paymethod){
+    this.paymethod=paymethod;
   }
 
   String getEndereco(){
@@ -120,6 +130,7 @@ void setEndereco(String endereco){
     double productsPrice = getProductsPrice();
     double shipPrice = getShipPrice();
     double discount = getDiscount();
+    String paymethod = getPayMethod();
 
     DocumentReference refOrder = await Firestore.instance.collection("orders").add(
         {
@@ -132,7 +143,8 @@ void setEndereco(String endereco){
           "status": 1,
           "endereco": endereco,
           "numero": numero,
-          "complemento": complemento
+          "complemento": complemento,
+          "Pagamento": paymethod
 
         }
     );

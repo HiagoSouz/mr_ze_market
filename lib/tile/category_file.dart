@@ -22,6 +22,7 @@ class CategoryTile extends StatelessWidget {
         backgroundImage: NetworkImage(snapshot.data["icon"]), //seleciona o icone no firestore
       ),
       title: Text(snapshot.data["title"]),
+      subtitle: Text(snapshot.data["subtitle"]),
       trailing: Icon(Icons.keyboard_arrow_right),
       onTap: (){
         Navigator.of(context).push(

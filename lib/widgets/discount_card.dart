@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:mr_ze_market/model/cart_model.dart';
 
 class DiscountCard extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -43,7 +44,8 @@ class DiscountCard extends StatelessWidget {
                               backgroundColor: Colors.redAccent,)
                         );
                       }
-                    });
+                    }
+                    );
               },
             ),
           )
