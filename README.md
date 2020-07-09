@@ -7,7 +7,6 @@ An application made with flutter and firebase for online sales from a local mark
 
 Packages used and their versions for operation:
 
-# Markdown
   - cupertino_icons: ^0.1.2
   - flutter_staggered_grid_view: ^0.3.0
   - cloud_firestore: ^0.12.9
