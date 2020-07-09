@@ -1,16 +1,22 @@
-# mr_ze_market
+# Mr Ze Market
 
-A new Flutter application.
+An application made with flutter and firebase for online sales from a local market. The application has order tracking, menu, discount coupons and shipping calculations.
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
+## Packages
 
-A few resources to get you started if this is your first Flutter project:
+Packages used and their versions for operation:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Markdown
+  - cupertino_icons: ^0.1.2
+  - flutter_staggered_grid_view: ^0.3.0
+  - cloud_firestore: ^0.12.9
+  - carousel_pro: ^1.0.0
+  - transparent_image: ^1.0.0
+  - scoped_model: ^1.0.1
+  - firebase_auth: ^0.11.1+12
+  - url_launcher: ^5.1.1
+  - flutter_launcher_icons: ^0.7.0
+  - badges: ^1.1.0
+  - flutter_money_formatter: ^0.8.3
+  - flutter_masked_text: ^0.8.0
