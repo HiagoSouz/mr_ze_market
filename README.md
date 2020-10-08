@@ -19,3 +19,31 @@ Packages used and their versions for operation:
   - badges: ^1.1.0
   - flutter_money_formatter: ^0.8.3
   - flutter_masked_text: ^0.8.0
+  
+  ## Prints
+  
+![alt text](https://github.com/HiagoSouz/mr_ze_market/blob/master/Pics/A1.jpg)
+
+![alt text](https://github.com/HiagoSouz/mr_ze_market/blob/master/Pics/A2.jpg)
+
+![alt text](https://github.com/HiagoSouz/mr_ze_market/blob/master/Pics/A3.jpg)
+
+![alt text](https://github.com/HiagoSouz/mr_ze_market/blob/master/Pics/A4.jpg)
+
+![alt text](https://github.com/HiagoSouz/mr_ze_market/blob/master/Pics/A5.jpg)
+
+![alt text](https://github.com/HiagoSouz/mr_ze_market/blob/master/Pics/A6.jpg)
+
+![alt text](https://github.com/HiagoSouz/mr_ze_market/blob/master/Pics/A7.jpg)
+
+![alt text](https://github.com/HiagoSouz/mr_ze_market/blob/master/Pics/A8.jpg)
+
+![alt text](https://github.com/HiagoSouz/mr_ze_market/blob/master/Pics/A9.jpg)
+
+![alt text](https://github.com/HiagoSouz/mr_ze_market/blob/master/Pics/A10.jpg)
+
+![alt text](https://github.com/HiagoSouz/mr_ze_market/blob/master/Pics/A11.jpg)
+
+![alt text](https://github.com/HiagoSouz/mr_ze_market/blob/master/Pics/A12.jpg)
+  
+ 
